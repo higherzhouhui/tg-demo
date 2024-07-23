@@ -5,6 +5,8 @@ import { InitDataPage } from '@/pages/InitDataPage/InitDataPage';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
+import { DetailPage } from '@/pages/detailPage/detailPage';
+import { MyPage } from '@/pages/myPage/myPage';
 
 interface Route {
   path: string;
@@ -15,6 +17,8 @@ interface Route {
 
 export const routes: Route[] = [
   { path: '/', Component: IndexPage },
+  { path: '/detail', Component: DetailPage },
+  { path: '/my', Component: MyPage },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },

@@ -11,6 +11,9 @@ import {
 } from 'react-router-dom';
 
 import { routes } from '@/navigation/routes.tsx';
+import Footer from '@/components/Footer/Footer';
+import { ConfigProvider } from 'antd-mobile';
+import enUS from 'antd-mobile/es/locales/en-US'
 
 function BackButtonManipulator() {
   const location = useLocation();
@@ -41,12 +44,19 @@ export const App: FC = () => (
     appearance={WebApp.colorScheme}
     platform={['macos', 'ios'].includes(WebApp.platform) ? 'ios' : 'base'}
   >
-    <BrowserRouter>
-      <BackButtonManipulator/>
-      <Routes>
-        {routes.map((route) => <Route key={route.path} {...route} />)}
-        <Route path='*' element={<Navigate to='/'/>}/>
-      </Routes>
-    </BrowserRouter>
+    <ConfigProvider locale={enUS}>
+      <BrowserRouter>
+        <BackButtonManipulator />
+        <div className='layout'>
+          <div className='body'>
+            <Routes>
+              {routes.map((route) => <Route key={route.path} {...route} />)}
+              <Route path='*' element={<Navigate to='/' />} />
+            </Routes>
+          </div>
+          <div className='footer'><Footer /></div>
+        </div>
+      </BrowserRouter>
+    </ConfigProvider>
   </AppRoot>
 );

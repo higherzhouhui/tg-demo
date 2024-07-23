@@ -1,0 +1,30 @@
+.footer-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: 48px;
+}
+.footer-container-item {
+    flex: 1 1;
+    color: var(--adm-color-text-secondary);
+    white-space: nowrap;
+    padding: 4px 8px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    svg {
+      font-size: 24px;
+      height: 24px;
+    }
+}
+.footer-container-item-active {
+  color: var(--tgui--accent_text_color);
+}
